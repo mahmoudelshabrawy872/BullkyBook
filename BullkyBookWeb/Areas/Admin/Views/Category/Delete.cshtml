@@ -1,0 +1,32 @@
+﻿@model Category  
+
+<form method="post" asp-action="DeletePOST">
+    <input asp-for="id" hidden />
+    <div class ="border p-3 mt-4">
+         <div >
+        <h1 class="text-primary">Edit Category</h1>
+        <hr />
+         </div>
+        @* <div asp-validation-summary="All" class="text-danger">*@
+        <div class="mb-3">
+            <label asp-for="name">
+                Category Name
+            </label>
+            <input disabled asp-for="name" class="form-control" />
+
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+        <a asp-controller="Category" asp-action="Index" class="btn btn-secondary">Back To List</a>
+    </div>
+
+
+    
+   
+</form>
+
+@section scripts{
+    @{
+
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}
